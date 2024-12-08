@@ -1,0 +1,4 @@
+enum OrderSelectionType {
+  SCHEDULED,
+  TASK,
+}
