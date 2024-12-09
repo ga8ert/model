@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/form/form_table_column.dart';
+
+import 'form_table_column.dart';
 
 part 'form_table.g.dart';
 

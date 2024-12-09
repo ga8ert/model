@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/form/formy_field.dart';
+
+import 'formy_field.dart';
 
 part 'formy_group.g.dart';
 

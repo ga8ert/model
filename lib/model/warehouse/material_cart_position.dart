@@ -1,4 +1,4 @@
-import 'package:models_code/model/warehouse/material_index.dart';
+import 'material_index.dart';
 
 class MaterialCartPosition {
   MaterialIndex materialIndex;

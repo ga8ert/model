@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/library/library_document.dart';
+
+import '../library/library_document.dart';
 
 part 'form_document.g.dart';
 

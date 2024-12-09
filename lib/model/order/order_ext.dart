@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:models_code/model/order/priority.dart';
-import 'package:models_code/model/order/service_order.dart';
-import 'package:models_code/model/order/status.dart';
+
+import 'priority.dart';
+import 'service_order.dart';
+import 'status.dart';
 
 extension ServiceOrderExt on ServiceOrder {
-  Status? statusText(Map<String, Status> statuses) => statuses[this.statusUuid];
+  Status? statusText(Map<String, Status> statuses) => statuses[statusUuid];
 
   Priority? priorityText(Map<String, Priority> priorities) =>
-      priorities[this.priorityUuid];
+      priorities[priorityUuid];
 
   Color getColorForPriority(
       BuildContext context, Map<String, Priority> priorities) {
-    var metaId = priorities[this.priorityUuid]?.metaId ?? 5;
+    var metaId = priorities[priorityUuid]?.metaId ?? 5;
 
     switch (metaId) {
       case 7:
@@ -29,12 +29,12 @@ extension ServiceOrderExt on ServiceOrder {
   }
 
   bool matchesStatus(Map<String, Status> statuses, String query) {
-    var status = statuses[this.statusUuid];
+    var status = statuses[statusUuid];
     return status != null && status.name.toLowerCase().contains(query);
   }
 
   bool matchesPriority(Map<String, Priority> priorities, String query) {
-    var priority = priorities[this.priorityUuid];
+    var priority = priorities[priorityUuid];
     return priority != null && priority.name.toLowerCase().contains(query);
   }
 }

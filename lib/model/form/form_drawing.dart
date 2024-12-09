@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/consts.dart';
+
+import '../consts.dart';
 
 part 'form_drawing.g.dart';
 

@@ -8,16 +8,16 @@ part of 'device_attachment.dart';
 
 DeviceAttachment _$DeviceAttachmentFromJson(Map<String, dynamic> json) =>
     DeviceAttachment(
-      uuid: json['uuid'],
-      clientUuid: json['clientUuid'],
-      name: json['name'],
-      optional: json['optional'],
-      renderTag: json['renderTag'],
-      templateUuid: json['templateUuid'],
-      sort: json['sort'] ?? 0,
-      newPage: json['newPage'] ?? true,
-      filled: json['filled'],
       productCategoryUuid: json['productCategoryUuid'] as String,
+      uuid: json['uuid'] as String,
+      clientUuid: json['clientUuid'] as String,
+      name: json['name'] as String,
+      optional: json['optional'] as bool,
+      renderTag: json['renderTag'] as String,
+      templateUuid: json['templateUuid'] as String,
+      sort: (json['sort'] as num?)?.toInt() ?? 0,
+      newPage: json['newPage'] as bool? ?? true,
+      filled: json['filled'] as bool?,
     );
 
 Map<String, dynamic> _$DeviceAttachmentToJson(DeviceAttachment instance) =>

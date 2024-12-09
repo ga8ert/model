@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/product/product_category_attribute.dart';
+
+import 'product_category_attribute.dart';
 
 part 'product_category.g.dart';
 

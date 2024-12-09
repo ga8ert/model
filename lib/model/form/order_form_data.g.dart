@@ -8,21 +8,35 @@ part of 'order_form_data.dart';
 
 OrderFormData _$OrderFormDataFromJson(Map<String, dynamic> json) =>
     OrderFormData(
-      uuid: json['uuid'],
-      created: json['created'],
+      uuid: json['uuid'] as String,
+      created: const TimestampConverter().fromJson(json['created']),
       orderUuid: json['orderUuid'] as String,
-      templateUuid: json['templateUuid'],
-      fieldData: json['fieldData'],
-      tableData: json['tableData'],
-      doc: json['doc'],
-      signatures: json['signatures'],
-      drawings: json['drawings'],
-      attachments: json['attachments'],
-      author: json['author'],
-      draft: json['draft'],
-      latitude: json['latitude'],
-      longitude: json['longitude'],
-      clientUuid: json['clientUuid'],
+      templateUuid: json['templateUuid'] as String,
+      fieldData: (json['fieldData'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(k, FormValue.fromJson(e as Map<String, dynamic>)),
+      ),
+      tableData: (json['tableData'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(
+            k,
+            (e as List<dynamic>)
+                .map((e) => (e as Map<String, dynamic>).map(
+                      (k, e) => MapEntry(
+                          k, FormValue.fromJson(e as Map<String, dynamic>)),
+                    ))
+                .toList()),
+      ),
+      doc: json['doc'] as String?,
+      signatures: Map<String, String>.from(json['signatures'] as Map),
+      drawings: Map<String, String>.from(json['drawings'] as Map),
+      attachments: (json['attachments'] as Map<String, dynamic>).map(
+        (k, e) =>
+            MapEntry(k, CommonFormData.fromJson(e as Map<String, dynamic>)),
+      ),
+      author: ServiceUser.fromJson(json['author'] as Map<String, dynamic>),
+      draft: json['draft'] as bool,
+      latitude: (json['latitude'] as num?)?.toDouble(),
+      longitude: (json['longitude'] as num?)?.toDouble(),
+      clientUuid: json['clientUuid'] as String?,
     );
 
 Map<String, dynamic> _$OrderFormDataToJson(OrderFormData instance) =>

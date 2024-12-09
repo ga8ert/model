@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/form/form_value.dart';
-import 'package:models_code/model/timestamp_converter.dart';
+
+import '../form/form_value.dart';
+import '../timestamp_converter.dart';
 
 part 'sequential_action_data.g.dart';
 

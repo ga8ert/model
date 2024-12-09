@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:models_code/model/library/library_document.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/timestamp_converter.dart';
+
+import '../timestamp_converter.dart';
+import 'library_document.dart';
 
 part 'library_item.g.dart';
 

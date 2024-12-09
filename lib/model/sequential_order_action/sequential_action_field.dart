@@ -1,6 +1,7 @@
 import 'package:models_code/model/form/form_column.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/form/formy_field.dart';
+
+import '../form/formy_field.dart';
 
 part 'sequential_action_field.g.dart';
 

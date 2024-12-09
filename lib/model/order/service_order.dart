@@ -1,14 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/order/customer.dart';
-import 'package:models_code/model/order/device.dart';
-import 'package:models_code/model/order/installation.dart';
-import 'package:models_code/model/order/note.dart';
-import 'package:models_code/model/order/order_calendar.dart';
-import 'package:models_code/model/order/order_event.dart';
-import 'package:models_code/model/order/order_photo.dart';
-import 'package:models_code/model/order/order_recipience_log.dart';
-import 'package:models_code/model/timestamp_converter.dart';
+
+import '../timestamp_converter.dart';
+import 'customer.dart';
+import 'device.dart';
+import 'installation.dart';
+import 'note.dart';
+import 'order_calendar.dart';
+import 'order_event.dart';
+import 'order_photo.dart';
+import 'order_recipience_log.dart';
 
 part 'service_order.g.dart';
 

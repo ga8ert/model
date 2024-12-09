@@ -9,10 +9,10 @@ part of 'device_attachment_group.dart';
 DeviceAttachmentGroup _$DeviceAttachmentGroupFromJson(
         Map<String, dynamic> json) =>
     DeviceAttachmentGroup(
-      uuid: json['uuid'],
-      name: json['name'],
-      renderTag: json['renderTag'],
-      sort: json['sort'],
+      uuid: json['uuid'] as String,
+      name: json['name'] as String,
+      renderTag: json['renderTag'] as String,
+      sort: (json['sort'] as num).toInt(),
       type: (json['type'] as num?)?.toInt(),
       attachments: (json['attachments'] as List<dynamic>?)
           ?.map((e) => DeviceAttachment.fromJson(e as Map<String, dynamic>))

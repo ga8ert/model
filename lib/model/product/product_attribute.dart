@@ -11,10 +11,9 @@ class ProductAttribute {
 
   ProductAttribute(
       {required this.uuid,
-      required value,
+      required this.value,
       required this.type,
-      required this.key})
-      : this.value = value;
+      required this.key});
 
   factory ProductAttribute.fromJson(Map<String, dynamic> json) =>
       _$ProductAttributeFromJson(json);

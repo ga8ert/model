@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/pair.dart';
+
+import '../pair.dart';
 
 part 'formy_field.g.dart';
 

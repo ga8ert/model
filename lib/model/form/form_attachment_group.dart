@@ -1,6 +1,7 @@
-import 'package:models_code/model/form/attachment_group.dart';
-import 'package:models_code/model/form/form_attachment.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'attachment_group.dart';
+import 'form_attachment.dart';
 
 part 'form_attachment_group.g.dart';
 
@@ -10,13 +11,13 @@ class FormAttachmentGroup extends AttachmentGroup {
   List<FormAttachment>? attachments;
 
   FormAttachmentGroup({
-    uuid,
-    name,
-    renderTag,
-    sort,
+    required super.uuid,
+    required super.name,
+    required super.renderTag,
+    required super.sort,
     required this.type,
     required this.attachments,
-  }) : super(uuid: uuid, name: name, renderTag: renderTag, sort: sort);
+  });
 
   factory FormAttachmentGroup.fromJson(Map<String, dynamic> json) =>
       _$FormAttachmentGroupFromJson(json);

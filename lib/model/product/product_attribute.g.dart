@@ -9,7 +9,7 @@ part of 'product_attribute.dart';
 ProductAttribute _$ProductAttributeFromJson(Map<String, dynamic> json) =>
     ProductAttribute(
       uuid: json['uuid'] as String,
-      value: json['value'],
+      value: json['value'] as String,
       type: (json['type'] as num).toInt(),
       key: json['key'] as String,
     );

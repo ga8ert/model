@@ -1,14 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/form/device_attachment_group.dart';
-import 'package:models_code/model/form/form_attachment.dart';
-import 'package:models_code/model/form/form_attachment_group.dart';
-import 'package:models_code/model/form/form_document.dart';
-import 'package:models_code/model/form/form_drawing.dart';
-import 'package:models_code/model/form/form_table.dart';
-import 'package:models_code/model/form/forms_signature.dart';
-import 'package:models_code/model/form/formy_field.dart';
-import 'package:models_code/model/form/formy_group.dart';
-import 'package:models_code/model/form/permissions_map.dart';
+
+import 'device_attachment_group.dart';
+import 'form_attachment.dart';
+import 'form_attachment_group.dart';
+import 'form_document.dart';
+import 'form_drawing.dart';
+import 'form_table.dart';
+import 'forms_signature.dart';
+import 'formy_field.dart';
+import 'formy_group.dart';
+import 'permissions_map.dart';
 
 part 'form_template.g.dart';
 

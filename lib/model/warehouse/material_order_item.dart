@@ -1,5 +1,6 @@
-import 'package:models_code/model/warehouse/material_index.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'material_index.dart';
 
 part 'material_order_item.g.dart';
 

@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/order/work_status.dart';
-import 'package:models_code/model/timestamp_converter.dart';
+
+import '../timestamp_converter.dart';
+import 'work_status.dart';
 
 part 'work_time.g.dart';
 

@@ -8,10 +8,10 @@ part of 'form_attachment_group.dart';
 
 FormAttachmentGroup _$FormAttachmentGroupFromJson(Map<String, dynamic> json) =>
     FormAttachmentGroup(
-      uuid: json['uuid'],
-      name: json['name'],
-      renderTag: json['renderTag'],
-      sort: json['sort'],
+      uuid: json['uuid'] as String,
+      name: json['name'] as String,
+      renderTag: json['renderTag'] as String,
+      sort: (json['sort'] as num).toInt(),
       type: (json['type'] as num).toInt(),
       attachments: (json['attachments'] as List<dynamic>?)
           ?.map((e) => FormAttachment.fromJson(e as Map<String, dynamic>))

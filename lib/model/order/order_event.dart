@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/order/order_event_type.dart';
-import 'package:models_code/model/order/service_user.dart';
-import 'package:models_code/model/timestamp_converter.dart';
+
+import '../timestamp_converter.dart';
+import 'order_event_type.dart';
+import 'service_user.dart';
 
 part 'order_event.g.dart';
 

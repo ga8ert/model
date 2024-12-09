@@ -9,7 +9,7 @@ part of 'device_attribute.dart';
 DeviceAttribute _$DeviceAttributeFromJson(Map<String, dynamic> json) =>
     DeviceAttribute(
       uuid: json['uuid'] as String,
-      value: json['value'],
+      value: json['value'] as String,
       type: (json['type'] as num).toInt(),
       key: json['key'] as String,
     );

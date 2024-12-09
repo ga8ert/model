@@ -1,8 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/order/area.dart';
-import 'package:models_code/model/order/role.dart';
-import 'package:models_code/model/order/simple_user.dart';
-import 'package:models_code/model/order/work_time.dart';
+
+import 'area.dart';
+import 'role.dart';
+import 'simple_user.dart';
+import 'work_time.dart';
 
 part 'service_user.g.dart';
 
@@ -51,7 +52,7 @@ class ServiceUser {
 
   List<SimpleUser> getCrewWithCurrent() {
     var tmpCrewCopy = [...crew];
-    tmpCrewCopy.add(SimpleUser.fromJson(this.toJson()));
+    tmpCrewCopy.add(SimpleUser.fromJson(toJson()));
     return tmpCrewCopy;
   }
 }

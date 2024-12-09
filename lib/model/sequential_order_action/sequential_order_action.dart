@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/form/permissions_map.dart';
-import 'package:models_code/model/sequential_order_action/sequential_action_field.dart';
+
+import '../form/permissions_map.dart';
+import 'sequential_action_field.dart';
 
 part 'sequential_order_action.g.dart';
 
@@ -34,7 +35,7 @@ class SequentialOrderAction {
             clientUuid: '',
             name: name,
             signatureRequired: true,
-            permissionsMap: Map(),
+            permissionsMap: <String, PermissionsMap>{},
             fields: [],
             renderTag: '');
 }

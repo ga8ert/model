@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/order/service_user.dart';
-import 'package:models_code/model/timestamp_converter.dart';
-import 'package:models_code/model/warehouse/material_order_item.dart';
+
+import '../order/service_user.dart';
+import '../timestamp_converter.dart';
+import 'material_order_item.dart';
 
 part 'material_order.g.dart';
 

@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/product/device_attribute.dart';
-import 'package:models_code/model/timestamp_converter.dart';
+
+import '../product/device_attribute.dart';
+import '../timestamp_converter.dart';
 
 part 'device.g.dart';
 
@@ -40,7 +41,7 @@ class Device {
       required this.deviceAttributes});
 
   String getNameWithSerial() {
-    return '${this.productModel} (${this.serial})';
+    return '$productModel ($serial)';
   }
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:models_code/model/order/priority.dart';
+
+import 'order/priority.dart';
 
 extension PriorityExt on Priority {
   Color getColor(BuildContext context) {

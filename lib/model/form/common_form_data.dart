@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:models_code/model/form/form_value.dart';
-import 'package:models_code/model/order/service_user.dart';
-import 'package:models_code/model/timestamp_converter.dart';
+import '../order/service_user.dart';
+import '../timestamp_converter.dart';
+import 'form_value.dart';
 
 part 'common_form_data.g.dart';
 
@@ -54,33 +54,33 @@ class CommonFormData {
   }
 
   setAuthorRecursive(ServiceUser serviceUser, {removeSignatures = true}) {
-    this.author = serviceUser;
+    author = serviceUser;
     if (removeSignatures) {
       this.removeSignatures();
     }
-    this.attachments.values.forEach((element) {
+    for (var element in attachments.values) {
       if (removeSignatures) {
         element.removeSignatures();
       }
       element.setAuthorRecursive(serviceUser);
-    });
+    }
   }
 
   removeSignatures() {
-    this.signatures = new Map();
-    this.fieldData.removeWhere((key, value) => key.contains("signName#"));
+    signatures = <String, String>{};
+    fieldData.removeWhere((key, value) => key.contains("signName#"));
   }
 
   mappedTableData() {
-    Map<String, List<Map<String, Map<String, dynamic>>>> mapToSave = Map();
-    if (!tableData.isEmpty) {
+    Map<String, List<Map<String, Map<String, dynamic>>>> mapToSave = {};
+    if (tableData.isNotEmpty) {
       tableData.forEach((key, value) {
         List<Map<String, Map<String, dynamic>>> listToSave =
             List.empty(growable: true);
-        value.forEach((element) {
+        for (var element in value) {
           listToSave
               .add(element.map((key, value) => MapEntry(key, value.toJson())));
-        });
+        }
         mapToSave[key] = listToSave;
       });
     }
@@ -88,12 +88,12 @@ class CommonFormData {
   }
 
   static demappedTableData(Map<String, dynamic> mapToDemap) {
-    Map<String, List<Map<String, FormValue>>> tableData = Map();
-    if (!mapToDemap.isEmpty) {
+    Map<String, List<Map<String, FormValue>>> tableData = {};
+    if (mapToDemap.isNotEmpty) {
       mapToDemap.forEach((key, value) {
         List<Map<String, FormValue>> listToSave = List.empty(growable: true);
         value.forEach((element) {
-          Map<String, FormValue> submap = Map();
+          Map<String, FormValue> submap = {};
           element.forEach((key, value) {
             submap[key] = FormValue.fromJson(value);
           });
